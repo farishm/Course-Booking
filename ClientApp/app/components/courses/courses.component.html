@@ -1,0 +1,79 @@
+<div class="container-fluid">   
+    <div class="row">
+        <div>
+            <div class="panel panel-default panel-table">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col col-xs-6">
+                            <label class="control-label">Course List - Click on the titles to view course details.</label>
+                        </div>
+                        <div class="col col-xs-4  text-left">
+                            &nbsp;
+                        </div>
+                        <div class="col col-xs-2 text-right">
+                            <button type="button" class="btn btn-sm btn-primary btn-create" (click)="gotoAdd()">Create New</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-hover">
+                            <thead style=" background-color: lightgrey">
+                                <tr>
+                                    <th>Title</th>
+                                    <th>Reference</th>
+                                    <th>Duration - Weeks</th>
+                                    <th>Fees - £</th>
+                                    <th>Status</th>
+                                    <th>Location</th>
+                                    <th>Total Places</th>
+                                    <th>Available Places</th>
+                                    <th>Edit</th>
+                                    <th>Delete</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let course of courses">
+                                    <td (click)="onSelect(course)">{{course.title}}</td>
+                                    <td>{{course.reference}}</td>
+                                    <td>{{course.duration}}</td>
+                                    <td>{{course.fees}}</td>
+                                    <td>{{course.status}}</td>
+                                    <td>{{course.location}}</td>
+                                    <td>{{course.totalplaces}}</td>
+                                    <td>{{course.availableplaces}}</td>
+                                    <td><button class="btn btn-primary btn-xs" (click)="gotoEdit(course)" data-toggle="tooltip" data-placement="top" title="Edit"><span class="glyphicon glyphicon-pencil"></span></button></td>
+                                    <td><button class="btn btn-danger btn-xs" (click)="onDelete(course)" data-toggle="tooltip" data-placement="top" title="Delete"><span class="glyphicon glyphicon-trash"></span></button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+
+            <div *ngIf="detailsSelected" class="panel panel-default">
+                <div class="panel-heading"> Course: {{selectedCourse.title | uppercase}} details</div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-sm-12 text-left">
+                            {{selectedCourse.description}}
+                        </div>
+                        <div class="col-sm-12 text-left">
+                            <button (click)="gotoDetail()" class="btn btn-default">
+                                View more details
+                            </button>
+                            <button class="btn" (click)="gotoClose()">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div *ngIf="deleteSelected" class="panel panel-default">
+                <div class="panel-heading">Plese confirm to delete selected course: {{selectedCourse.title | uppercase}} - <button class="btn btn-danger" (click)="delete(course); $event.stopPropagation()">Confirm</button></div>
+            </div>
+
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,93 @@
+<div class="container-fluid">
+    <div class="row">
+        <div>
+            <div class="panel panel-default panel-table" *ngIf="course">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col col-xs-12">
+                            <label>View Course Details - {{course.title}}</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-sm-6 text-left">
+                            <div class="form-horizontal">
+                                <div class="form-group">
+                                    <label class="control-label col-sm-3">Id:</label>
+                                    <div class="col-sm-9 text-left">
+                                        <label class="control-label">{{course.id}}</label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-sm-3" for="#courseTitle">Course Title:</label>
+                                    <div class="col-sm-9 text-left">
+                                        <label class="control-label">{{course.title}}</label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-sm-3" for="#description">Description:</label>
+                                    <div class="col-sm-9 text-left">
+                                        <label class="control-label">{{course.description}}</label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-sm-3" for="#reference">Reference:</label>
+                                    <div class="col-sm-9 text-left">
+                                        <label class="control-label">{{course.reference}}</label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-sm-3" for="#duration">Duration - Weeks:</label>
+                                    <div class="col-sm-9 text-left">
+                                        <label class="control-label">{{course.duration}}</label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-sm-3" for="#fees">Fees - £:</label>
+                                    <div class="col-sm-9 text-left">
+                                        <label class="control-label">{{course.fees}}</label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-sm-3" for="#status">Status:</label>
+                                    <div class="col-sm-9 text-left">
+                                        <label class="control-label">{{course.status}}</label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-sm-3" for="#location">Location:</label>
+                                    <div class="col-sm-9 text-left">
+                                        <label class="control-label">{{course.location}}</label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-sm-3" for="#totalplaces">Total Places:</label>
+                                    <div class="col-sm-9 text-left">
+                                        <label class="control-label">{{course.totalplaces}}</label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-sm-3" for="#availableplaces">Available Places:</label>
+                                    <div class="col-sm-9 text-left">
+                                        <label class="control-label">{{course.availableplaces}}</label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-offset-6 col-sm-6">
+                                        <button (click)="edit()" class="btn btn-default">
+                                            Edit this Course
+                                        </button>
+                                        <button (click)="goBack()" class="btn">Back</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 text-left">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
