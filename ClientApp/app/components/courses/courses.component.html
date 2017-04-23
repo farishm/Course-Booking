@@ -7,8 +7,11 @@
                         <div class="col col-xs-6">
                             <label class="control-label">Course List - Click on the titles of the Courses to view course details.</label>
                         </div>
-                        <div class="col col-xs-4  text-left">
-                            &nbsp;
+                        <div class="col col-xs-2  text-left">
+                            <input #searchBox class="form-control input-sm" placeholder="Search Courses" id="search-box"  [(ngModel)]="searchTerm"/>
+                        </div>
+                        <div class="col col-xs-2  text-left">
+                            <button type="button" class="btn btn-sm btn-primary btn-create" (click)="gotoSearch(searchTerm)">Search</button>
                         </div>
                         <div class="col col-xs-2 text-right">
                             <button type="button" class="btn btn-sm btn-primary btn-create" (click)="gotoAdd()">Create New</button>

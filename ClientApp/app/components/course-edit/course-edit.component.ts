@@ -28,6 +28,7 @@ export class CourseEditComponent implements OnInit {
     }
 
     save(): void {
+        if (!this.course.title) { return; } 
         this.http.put('/api/courses', this.course).subscribe(result => {
             this.goBack();
         })   

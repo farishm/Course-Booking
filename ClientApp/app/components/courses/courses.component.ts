@@ -42,6 +42,13 @@ export class CoursesComponent {
         this.router.navigate(['/add']);
     }
 
+    gotoSearch(searchTerm: string): void {
+        if (!searchTerm) { return; } 
+        this.http.get('api/courses/title/' + searchTerm).subscribe(result => {
+            this.courses = result.json();
+        });       
+    }
+
     gotoEdit(course: Course): void {
         this.selectedCourse = course;
         this.router.navigate(['/edit', this.selectedCourse.id]);

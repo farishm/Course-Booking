@@ -44,6 +44,9 @@ namespace Course_Booking.Controllers
         [Route("title/{title}")]
         public IEnumerable<Course> GetByTitle(string title)
         {
+            if(title=="")
+                return courseRepo.GetAll();
+            else
             return courseRepo.GetByTitle(title);
            
         }

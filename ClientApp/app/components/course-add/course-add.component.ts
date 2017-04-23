@@ -22,8 +22,8 @@ export class CourseAddComponent implements OnInit {
     }
 
     save(): void {
-        this.course.title = this.course.title.trim();
         if (!this.course.title) { return; } 
+        this.course.title = this.course.title.trim();       
 
         this.http.post('/api/courses', this.course).subscribe(result => {
             this.goBack();
