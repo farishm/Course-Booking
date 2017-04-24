@@ -14,7 +14,11 @@ export class CoursesComponent {
     deleteSelected: boolean = false;
 
     constructor(private router: Router, private http: Http) {
-        http.get('/api/courses').subscribe(result => {
+        this.listCourses();   
+    }
+
+    listCourses(): void {
+        this.http.get('/api/courses').subscribe(result => {
             this.courses = result.json();
         });
     }
@@ -43,7 +47,11 @@ export class CoursesComponent {
     }
 
     gotoSearch(searchTerm: string): void {
-        if (!searchTerm) { return; } 
+        if (!searchTerm) {
+            this.listCourses();
+            return;
+        } 
+
         this.http.get('api/courses/title/' + searchTerm).subscribe(result => {
             this.courses = result.json();
         });       
