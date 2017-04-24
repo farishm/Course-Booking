@@ -1,2 +1,6 @@
 # Course-Booking
-Developed using .net core, mvc, web api and angular 2
+Developed using Visual Studio .Net Core, Web API, MVC, Angular 2 and Bootstrap. Thes system is hosted on Microsoft Azure using Azure App Service and Continuous deployment.
+
+Live url is
+
+http://course-booking.azurewebsites.net
